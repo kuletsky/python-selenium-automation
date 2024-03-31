@@ -13,15 +13,15 @@ driver = webdriver.Chrome(service=service)
 driver.maximize_window()
 
 # open the url
-driver.get('https://www.amazon.com/')
+driver.get('https://www.target.com/')
 
-# populate search field
-search = driver.find_element(By.ID, 'searchDropdownBox')
-# driver.find_element(By.XPATH, "//input[@aria-label='Search Amazon']")
-
-
-search.clear()
-search.send_keys('drupal')
+# # populate search field
+# search = driver.find_element(By.ID, 'searchDropdownBox')
+# # driver.find_element(By.XPATH, "//input[@aria-label='Search Amazon']")
+#
+#
+# search.clear()
+# search.send_keys('drupal')
 
 # wait for 4 sec
 # sleep(4)

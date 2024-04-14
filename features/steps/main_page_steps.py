@@ -14,6 +14,11 @@ def open_target(context):
     context.driver.get('https://www.target.com/')
 
 
+@when('Open cart page')
+def open_cart(context):
+    context.driver.get('https://www.target.com/cart')
+
+
 # Click on cart
 @when('Click on cart')
 def click_cart(context):

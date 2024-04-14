@@ -27,7 +27,7 @@ def search_product(context, item):
 
 
 # Click on cart product after search
-@when('Click on cart product')
+@when('Click on BTN "Add to cart"')
 def click_on_cart_product(context):
     context.driver.find_element(*ADD_CART_BTN).click()
     sleep(2)
@@ -39,7 +39,7 @@ def click_on_cart_button(context):
     context.driver.find_element(*ADD_TO_CART).click()
 
 
-# Click BTN view cart
-@when('Click BTN view cart')
-def click_on_view_button(context):
-    context.driver.find_element(*VIEW_CART_BTN).click()
+# # Click BTN view cart
+# @when('Click BTN view cart')
+# def click_on_view_button(context):
+#     context.driver.find_element(*VIEW_CART_BTN).click()

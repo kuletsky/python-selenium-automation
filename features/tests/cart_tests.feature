@@ -10,7 +10,7 @@ Feature: Cart verify tests
   Scenario: Verify item is in the cart
     Given Open Target main page
     When Search for cup
-    When Click on cart product
-    When Click BTN Add to cart
-    When Click BTN view cart
+    And Click on BTN "Add to cart"
+    And Click BTN Add to cart
+    And Open cart page
     Then Verify item is in the cart

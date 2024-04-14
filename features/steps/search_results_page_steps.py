@@ -1,5 +1,5 @@
 from selenium.webdriver.common.by import By
-from behave import then, when, given
+from behave import then, when
 from time import sleep
 
 
@@ -7,6 +7,8 @@ SEARCH_RESULT_HEADER = (By.XPATH, "//div[@data-test='resultsHeading']")
 ADD_CART_BTN = (By.CSS_SELECTOR, "#addToCartButtonOrTextIdFor14736272")
 ADD_TO_CART = (By.CSS_SELECTOR, "[data-test='orderPickupButton']")
 VIEW_CART_BTN = (By.CSS_SELECTOR, "a[href='/cart']")
+SEARCH_INPUT = (By.ID, 'search')
+SEARCH_BTN = (By.CSS_SELECTOR, '[data-test*="SearchButton"]')
 
 
 # Verify search results are shown for expected_item
@@ -14,6 +16,14 @@ VIEW_CART_BTN = (By.CSS_SELECTOR, "a[href='/cart']")
 def verify_search_results(context, expected_item):
     actual_text = context.driver.find_element(*SEARCH_RESULT_HEADER).text
     assert expected_item in actual_text, f'Error! Text "{expected_item}" not in actual text "{actual_text}"'
+
+
+# Search for product
+@when('Search for {item}')
+def search_product(context, item):
+    context.driver.find_element(*SEARCH_INPUT).send_keys(item)
+    context.driver.find_element(*SEARCH_BTN).click()
+    sleep(6)
 
 
 # Click on cart product after search

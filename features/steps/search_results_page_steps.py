@@ -31,12 +31,12 @@ def search_product(context, item):
 # CClick on BTN "Add to cart"
 @when('Click on BTN "Add to cart"')
 def click_on_cart_product(context):
-    # context.driver.find_element(*BTN_ADD_TO_CART).click()
-    add_cart_btns = context.driver.find_elements(*BTN_ADD_TO_CART)
-    for btn in add_cart_btns:
-        btn.click()
-        context.driver.find_element(*BTN_CONFIRM_ADD_TO_CART).click()
-        context.driver.find_element(By.CSS_SELECTOR, "[aria-label='close']").click()
+    context.driver.find_element(*BTN_ADD_TO_CART).click()
+    # add_cart_btns = context.driver.find_elements(*BTN_ADD_TO_CART)
+    # for btn in add_cart_btns:
+    #     btn.click()
+    #     context.driver.find_element(*BTN_CONFIRM_ADD_TO_CART).click()
+    #     context.driver.find_element(By.CSS_SELECTOR, "[aria-label='close']").click()
     # sleep(2)
 
 # Confirm BTN "Add to cart"

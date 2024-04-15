@@ -11,6 +11,6 @@ Feature: Cart verify tests
     Given Open Target main page
     When Search for bike
     And Click on BTN "Add to cart"
-#    And Confirm BTN "Add to cart"
+    And Confirm BTN "Add to cart"
     And Open cart page
-#    Then Verify item is in the cart
+    Then Verify item is in the cart

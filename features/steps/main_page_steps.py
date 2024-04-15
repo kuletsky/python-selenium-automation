@@ -17,6 +17,7 @@ def open_target(context):
 @when('Open cart page')
 def open_cart(context):
     context.driver.get('https://www.target.com/cart')
+    sleep(2)
 
 
 # Click on cart

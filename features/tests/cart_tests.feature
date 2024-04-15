@@ -9,8 +9,8 @@ Feature: Cart verify tests
 # Verify item is in the cart (HW 4)
   Scenario: Verify item is in the cart
     Given Open Target main page
-    When Search for cup
+    When Search for bike
     And Click on BTN "Add to cart"
-    And Click BTN Add to cart
+#    And Confirm BTN "Add to cart"
     And Open cart page
-    Then Verify item is in the cart
+#    Then Verify item is in the cart

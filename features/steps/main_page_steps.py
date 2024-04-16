@@ -1,3 +1,4 @@
+from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from behave import given, when, then
 from time import sleep
@@ -6,6 +7,7 @@ from time import sleep
 CART_ICON = (By.CSS_SELECTOR, "use[href*='Cart.svg#Cart']")
 HEADER = (By.CSS_SELECTOR, "[class*='UtilityHeaderContainer']")
 HEADER_LINKS = (By.CSS_SELECTOR, "a[id*='utilityNav']")
+VERIFY_ITEM = (By.CSS_SELECTOR, "[class*='styles__CartSummarySpan-sc-odscpb-3']")
 
 
 # Open the Target main page
@@ -17,7 +19,9 @@ def open_target(context):
 @when('Open cart page')
 def open_cart(context):
     context.driver.get('https://www.target.com/cart')
-    sleep(2)
+    context.wait.until(EC.presence_of_element_located(VERIFY_ITEM),
+                       message='Cart is not open')
+    # sleep(2)
 
 
 # Click on cart

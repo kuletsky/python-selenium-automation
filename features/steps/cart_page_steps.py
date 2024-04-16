@@ -2,6 +2,9 @@ from selenium.webdriver.common.by import By
 from behave import then
 
 
+VERIFY_ITEM = (By.CSS_SELECTOR, "[class*='styles__CartSummarySpan-sc-odscpb-3']")
+
+
 # Verify cart is empty
 @then('Verify cart is empty')
 def verify_cart(context):
@@ -15,5 +18,5 @@ def verify_cart(context):
 @then('Verify item is in the cart')
 def verify_item_is_in_the_cart(context):
     expected_result = 'item'
-    actual_result = context.driver.find_element(By.CSS_SELECTOR, "[class*='styles__CartSummarySpan-sc-odscpb-3']").text
+    actual_result = context.driver.find_element(*VERIFY_ITEM).text
     assert expected_result in actual_result, f"Error! {actual_result}"

@@ -11,3 +11,10 @@ Feature: Search verify tests
     |coffee   |coffee         |
     |flower   |flower         |
 
+
+    #HW_5
+  Scenario: Every product has Name and Image
+    Given Open Target main page
+    When Search for TV
+    Then Verify that every product has Name
+    And Verify that every product has Image

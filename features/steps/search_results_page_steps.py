@@ -64,7 +64,7 @@ def verify_that_product_has_name(context):
     item_names = context.driver.find_elements(*ITEM_NAMES)
 
     for item in item_names:
-        assert item.text != '', f'Error! Item "{item.text}" does not have Name'
+        assert item.text, f'Error! Item does not have Name'
 
 
 @then('Verify that every product has Image')

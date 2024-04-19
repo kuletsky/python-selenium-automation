@@ -18,3 +18,9 @@ Feature: Search verify tests
     When Search for TV
     Then Verify that every product has Name
     And Verify that every product has Image
+
+  # Version 2
+  Scenario: Every product has Name and Image
+    Given Open Target main page
+    When Search for TV
+    Then Verify that every product has Name and Image

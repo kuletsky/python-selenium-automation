@@ -76,7 +76,22 @@ def verify_that_product_has_image(context):
         assert picture.get_attribute('src'), f'Error! Picture not found for Item "{picture.get_attribute('alt')}'
 
 
- # Click BTN view cart
+# version 2
+@then('Verify that every product has Name and Image')
+def verify_that_product_has_name_and_title(context):
+
+
+    all_products = context.driver.find_elements()
+
+    for product in all_products:
+        name = product.find_element(*ITEM_NAMES).text
+
+        assert name, f'Error! Item does not have Name'
+        product.find_element(*ITEM_PICTURES)
+
+
+
+# Click BTN view cart
 # @when('Click BTN view cart')
 # def click_on_view_button(context):
 #     context.driver.find_element(*VIEW_CART_BTN).click()
